@@ -7,7 +7,9 @@ let mail;
 
 localStorage.setItem ('bienvenida', 'Bienvenido a la pagina de Matematica. Aqui encontraras las notas de los alumnos pertenecientes a la clase');
 let bienvenida = localStorage.getItem ('bienvenida');
-console.log(bienvenida);
+
+let welcome = document.createElement ("p");
+parrafo.innerHTML = bienvenida;
 
 
 function profesor (nombre, edad, materia){
@@ -20,27 +22,31 @@ console.log(profesor1);
 
 mail = prompt ("Ingrese su correo electronico");
 sessionStorage.setItem('mail', 'El correo electronico de la persona ingresado es '+mail);
-let correo = sessionStorage.getItem ('mail')
-console.log("El correo electronico ingresado fue "+mail);
+let correo = sessionStorage.getItem ('mail');
+let gmail = document.createElement ("p");
+gmail1.innerHTML = "Ingresaste con el siguiente correo electronico: "+mail;
 
-while (counter < 3){
+
+
+while (counter < 2){
 nombre = prompt("Nombre del alumno");
 primeranota = parseFloat(prompt("Primer nota"));
 segundanota = parseFloat(prompt("Segunda nota"));
 promedio = (primeranota+segundanota)/2;
 
 if(promedio >=6){
-    alert("El promedio del alumno "+nombre+" esta aprobado con una nota de "+promedio+". Felicitaciones!")
+    let notaalumnos = document.createElement("div");
+    notas.innerHTML = ("<p>El promedio del alumno "+nombre+" esta aprobado con una nota de "+promedio+". Felicitaciones!</p>");
 }else{
-    alert("El promedio de "+nombre+" esta desaprobado")
+    let notaalumnos2 = document.createElement("div");
+    notas2.innerHTML = ("<p> El promedio de " +nombre+ " esta desaprobado");
 }
-console.log(nombre+" tuvo un promedio final de "+ promedio)
 counter++;
 }
 
 let alumnos = ["La cantidad total de alumnos son "+counter]
-console.log(alumnos);
-
+let cantidad = document.createElement("p");
+    cantidadalumnos.innerHTML = ("<p>La cantidad total de alumnos son " +counter+"</p>");
 
 let personas = document.getElementById("profesores");
 let profesores = ["Los encargados de este curso fueron: Santino, Pedro, Ramiro, Javier"];
@@ -51,7 +57,7 @@ for (const profesor of profesores){
 }
 
 let Matematica = document.createElement ("h1");
-titulo.innerHTML = "<h1>Estas notas pertenecieron a la clase de matematicas</h1>";
+titulo.innerHTML = "<h1>Matematica - Colegio Nacional de Cordoba</h1>";
 document.body.append (Matematica);
 
 let MeGusta = 
@@ -72,13 +78,5 @@ for (const directivo of directivos){
 }
 
 const almacenado = JSON.parse(localStorage.getItem("Lista de directivos"));
-console.log (almacenado);
-
-
-                
-
-
-
-
-
+console.log (almacenado)
 
